@@ -1,0 +1,13 @@
+Node 1,Node 2,Cost_Method,Feasibility_Method,LT_method
+Supplier,Shanghai,0,1,7
+Supplier,Shenzhen,0,1,5
+Shanghai,Los Angeles,cluster_costs,cluster_feas,cluster_LTs
+Shanghai,New York,cluster_costs,cluster_feas,cluster_LTs
+Shenzhen,Los Angeles,cluster_costs,cluster_feas,cluster_LTs
+Shenzhen,New York,cluster_costs,cluster_feas,cluster_LTs
+Los Angeles,CA_WH,cluster_costs,1,2
+New York,NJ_WH,cluster_costs,1,1
+CA_WH,FC_West,cluster_costs,1,1
+NJ_WH,FC_East,cluster_costs,1,1
+CA_WH,FC_East,cluster_costs,cluster_feas,cluster_LTs
+NJ_WH,FC_West,cluster_costs,cluster_feas,cluster_LTs

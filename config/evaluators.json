@@ -1,0 +1,38 @@
+{
+  "evaluator_type": "simple",
+  "evaluators": {
+    "cluster_costs": {
+      "type": "expression",
+      "description": "Calculate cost based on cluster pair and quantity",
+      "base_rates": {
+        "CN_to_US_West": 1200,
+        "CN_to_US_East": 1500,
+        "US_West_to_US_East": 300,
+        "US_East_to_US_West": 300
+      }
+    },
+    "cluster_LTs": {
+      "type": "lookup",
+      "description": "Look up lead time by cluster pair",
+      "transit_times": {
+        "CN_to_US_West": 21,
+        "CN_to_US_East": 28,
+        "US_West_to_US_East": 5,
+        "US_East_to_US_West": 5
+      }
+    },
+    "cluster_feas": {
+      "type": "rule",
+      "description": "Check feasibility rules for oversized items",
+      "rules": [
+        "oversized_allowed_clusters"
+      ]
+    },
+    "wh_cost": {
+      "type": "calculation",
+      "description": "Calculate warehouse storage cost",
+      "storage_rate_per_unit_per_day": 0.10,
+      "average_storage_days": 7
+    }
+  }
+}
