@@ -1,0 +1,6 @@
+product_category,hazmat_class,allowed_carriers,special_requirements
+Batteries,Class 9,DHL;FedEx;UPS,UN3480 packaging
+Chemicals,Class 8,Specialized carriers only,MSDS required
+Aerosols,Class 2.1,Ground transport only,Limited quantities
+Flammable liquids,Class 3,Hazmat certified only,Proper labeling
+Oxidizers,Class 5,Specialized carriers only,Segregation required

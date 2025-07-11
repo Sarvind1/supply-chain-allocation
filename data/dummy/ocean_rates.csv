@@ -1,0 +1,31 @@
+origin_port,dest_port,container_type,base_rate,fuel_surcharge_pct,peak_season_surcharge
+Shanghai,Los Angeles,20ft,2500,15,200
+Shanghai,Los Angeles,40ft,3500,15,300
+Shanghai,Oakland,20ft,2600,15,200
+Shanghai,Oakland,40ft,3600,15,300
+Shanghai,New York,20ft,3200,18,250
+Shanghai,New York,40ft,4200,18,350
+Shanghai,Newark,20ft,3300,18,250
+Shanghai,Newark,40ft,4300,18,350
+Shanghai,Savannah,20ft,3000,17,225
+Shanghai,Savannah,40ft,4000,17,325
+Shenzhen,Los Angeles,20ft,2400,15,200
+Shenzhen,Los Angeles,40ft,3400,15,300
+Shenzhen,Oakland,20ft,2500,15,200
+Shenzhen,Oakland,40ft,3500,15,300
+Shenzhen,New York,20ft,3100,18,250
+Shenzhen,New York,40ft,4100,18,350
+Shenzhen,Newark,20ft,3200,18,250
+Shenzhen,Newark,40ft,4200,18,350
+Shenzhen,Savannah,20ft,2900,17,225
+Shenzhen,Savannah,40ft,3900,17,325
+Ningbo,Los Angeles,20ft,2550,15,200
+Ningbo,Los Angeles,40ft,3550,15,300
+Ningbo,Oakland,20ft,2650,15,200
+Ningbo,Oakland,40ft,3650,15,300
+Ningbo,New York,20ft,3250,18,250
+Ningbo,New York,40ft,4250,18,350
+Ningbo,Newark,20ft,3350,18,250
+Ningbo,Newark,40ft,4350,18,350
+Ningbo,Savannah,20ft,3050,17,225
+Ningbo,Savannah,40ft,4050,17,325

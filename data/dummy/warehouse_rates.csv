@@ -1,0 +1,10 @@
+warehouse,storage_rate_per_unit_per_day,handling_fee_per_unit,min_storage_days
+CA_WH,0.10,0.50,3
+NV_WH,0.08,0.45,3
+NJ_WH,0.12,0.55,3
+PA_WH,0.11,0.52,3
+GA_WH,0.09,0.48,3
+TX_WH,0.09,0.47,3
+Seattle_3PL,0.15,0.60,5
+Chicago_3PL,0.14,0.58,5
+Atlanta_3PL,0.13,0.56,5
