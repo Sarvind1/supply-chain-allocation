@@ -53,12 +53,12 @@ def analyze_allocation_results(results_file):
     df['path_length'] = df['selected_path'].apply(len)
     cost_by_length = df.groupby('path_length')['total_cost'].agg(['mean', 'sum', 'count'])
     for length, row in cost_by_length.iterrows():
-        print(f"  {length} nodes: ${row['mean']:,.2f} avg, ${row['sum']:,.2f} total ({row['count']} SKUs)")
+        print(f"  {length} nodes: ${row['mean']:,.2f} avg, ${row['sum']:,.2f} total ({int(row['count'])} SKUs)")
     
     # Lead time distribution
     print(f"\nLead Time Distribution:")
     lt_bins = [0, 10, 20, 30, 40, 50, 100]
-    lt_labels = ['0-10', '11-20', '21-30', '31-40', '41-50', '50+']}
+    lt_labels = ['0-10', '11-20', '21-30', '31-40', '41-50', '50+']
     df['lt_bin'] = pd.cut(df['total_lead_time'], bins=lt_bins, labels=lt_labels)
     lt_dist = df['lt_bin'].value_counts().sort_index()
     for bin_name, count in lt_dist.items():
