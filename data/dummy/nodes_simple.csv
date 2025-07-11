@@ -1,0 +1,6 @@
+Node,Node group,Stage,Cluster,Cost_Method,Feasibility_Method,LT_method
+,Supplier,1,Source,0,1,0
+Shanghai,Source Port,2,CN,0,1,0
+Los Angeles,Destination port,3,US_West,0,1,0
+CA_WH,WH,4,US_West,wh_cost,1,0
+FC_West,FC,5,US_West,0,1,0

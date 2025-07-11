@@ -1,0 +1,5 @@
+Node 1,Node 2,Cost_Method,Feasibility_Method,LT_method
+Supplier,Shanghai,0,1,7
+Shanghai,Los Angeles,cluster_costs,cluster_feas,cluster_LTs
+Los Angeles,CA_WH,cluster_costs,1,2
+CA_WH,FC_West,cluster_costs,1,1

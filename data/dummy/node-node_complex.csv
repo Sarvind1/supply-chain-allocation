@@ -1,0 +1,51 @@
+Node 1,Node 2,Cost_Method,Feasibility_Method,LT_method
+Supplier,Shanghai,0,1,7
+Supplier,Shenzhen,0,1,5
+Supplier,Ningbo,0,1,6
+Shanghai,Los Angeles,cluster_costs,cluster_feas,cluster_LTs
+Shanghai,Oakland,cluster_costs,cluster_feas,cluster_LTs
+Shanghai,New York,cluster_costs,cluster_feas,cluster_LTs
+Shanghai,Newark,cluster_costs,cluster_feas,cluster_LTs
+Shanghai,Savannah,cluster_costs,cluster_feas,cluster_LTs
+Shenzhen,Los Angeles,cluster_costs,cluster_feas,cluster_LTs
+Shenzhen,Oakland,cluster_costs,cluster_feas,cluster_LTs
+Shenzhen,New York,cluster_costs,cluster_feas,cluster_LTs
+Shenzhen,Newark,cluster_costs,cluster_feas,cluster_LTs
+Shenzhen,Savannah,cluster_costs,cluster_feas,cluster_LTs
+Ningbo,Los Angeles,cluster_costs,cluster_feas,cluster_LTs
+Ningbo,Oakland,cluster_costs,cluster_feas,cluster_LTs
+Ningbo,New York,cluster_costs,cluster_feas,cluster_LTs
+Ningbo,Newark,cluster_costs,cluster_feas,cluster_LTs
+Ningbo,Savannah,cluster_costs,cluster_feas,cluster_LTs
+Los Angeles,CA_WH,cluster_costs,1,2
+Los Angeles,NV_WH,cluster_costs,1,3
+Los Angeles,Seattle_3PL,cluster_costs,1,4
+Oakland,CA_WH,cluster_costs,1,1
+Oakland,NV_WH,cluster_costs,1,2
+Oakland,Seattle_3PL,cluster_costs,1,3
+New York,NJ_WH,cluster_costs,1,1
+New York,PA_WH,cluster_costs,1,2
+New York,Chicago_3PL,cluster_costs,1,5
+Newark,NJ_WH,cluster_costs,1,1
+Newark,PA_WH,cluster_costs,1,2
+Newark,Chicago_3PL,cluster_costs,1,5
+Savannah,GA_WH,cluster_costs,1,1
+Savannah,TX_WH,cluster_costs,1,3
+Savannah,Atlanta_3PL,cluster_costs,1,2
+CA_WH,FC_West,cluster_costs,1,1
+CA_WH,FC_Central,cluster_costs,cluster_feas,5
+NV_WH,FC_West,cluster_costs,1,2
+NV_WH,FC_Central,cluster_costs,cluster_feas,4
+NJ_WH,FC_East,cluster_costs,1,1
+NJ_WH,FC_Central,cluster_costs,cluster_feas,3
+PA_WH,FC_East,cluster_costs,1,2
+PA_WH,FC_Central,cluster_costs,cluster_feas,3
+GA_WH,FC_South,cluster_costs,1,1
+GA_WH,FC_East,cluster_costs,cluster_feas,3
+TX_WH,FC_South,cluster_costs,1,2
+TX_WH,FC_Central,cluster_costs,cluster_feas,2
+Seattle_3PL,FC_West,cluster_costs,1,2
+Chicago_3PL,FC_Central,cluster_costs,1,1
+Chicago_3PL,FC_East,cluster_costs,cluster_feas,3
+Atlanta_3PL,FC_South,cluster_costs,1,1
+Atlanta_3PL,FC_East,cluster_costs,cluster_feas,2
