@@ -1,19 +1,43 @@
-# Project Brain - Supply Chain Allocation Engine
+# Project Brain - Supply Chain Allocation Engine v2.0
 
 ## Overview
 A flexible inventory allocation engine that optimizes product routing through supply chain networks using graph algorithms, Pydantic validation, and memoization.
 
-## Core Principles
-1. **Graph-Based Network**: Supply chain as directed graph (nodes & edges)
-2. **Pydantic Models**: Type-safe data validation
-3. **Memoization**: Cache evaluator results for performance
-4. **Modular Evaluators**: Pluggable cost/feasibility/lead-time calculations
+## Architecture
+```
+Input CSVs → Pydantic Models → NetworkX Graph → Path Finding → 
+Evaluation (Memoized) → CM3 Optimization → Allocation Results
+```
 
-## Key Components
-- **Data Models**: Pydantic schemas for Products, Nodes, Edges
-- **Graph Engine**: NetworkX for path finding
-- **Evaluator System**: JSON-configured calculators with caching
-- **Allocation Algorithm**: Path evaluation with CM3 optimization
+## Core Components
 
-## Data Flow
-1. Load CSVs → 2. Build Graph → 3. Find Paths → 4. Evaluate → 5. Allocate
+### 1. Data Models (`src/models/`)
+- **Product**: SKU data with validation
+- **Chunk**: Processing unit with origin
+- **Node/Edge**: Network components
+- **EvaluationContext**: Caching-aware context
+
+### 2. Graph Engine (`src/graph/`)
+- **NetworkBuilder**: Constructs directed graph
+- **PathFinder**: Finds all/shortest paths
+
+### 3. Evaluators (`src/evaluators/`)
+- **BaseEvaluator**: Abstract interface
+- **SimpleEvaluator**: Basic calculations
+- **Memoization**: Automatic result caching
+
+### 4. Allocation (`src/allocation/`)
+- **PathEvaluator**: Evaluates complete paths
+- **Allocator**: Optimizes by CM3 score
+
+## Usage
+```bash
+python -m src.main --products data.csv --nodes nodes.csv --edges edges.csv
+```
+
+## Key Features
+- ✅ Type-safe with Pydantic
+- ✅ Memoized evaluators
+- ✅ Flexible graph structure
+- ✅ CM3-optimized allocation
+- ✅ Extensible evaluator system
