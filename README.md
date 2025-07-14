@@ -1,30 +1,34 @@
 # Supply Chain Allocation Engine
 
-A flexible inventory allocation engine using graph-based supply chain network with Pydantic validation and memoization.
-
-## Features
-- 🔗 Graph-based supply chain network
-- ✅ Pydantic data validation
-- 🚀 Memoized evaluators for performance
-- 📊 CM3-optimized allocation
-- 🔧 Configurable evaluation methods
-- 📈 Comprehensive analytics and visualization
+A flexible inventory allocation engine that optimizes product routing through supply chain networks using graph algorithms, validation, and memoization.
 
 ## Quick Start
 
-### Installation
+### 1. Clone and Setup
 ```bash
-# Clone the repository
 git clone https://github.com/Sarvind1/supply-chain-allocation.git
 cd supply-chain-allocation
+
+# Create virtual environment
+python -m venv .venv
+
+# Activate virtual environment
+# On macOS/Linux:
+source .venv/bin/activate
+# On Windows:
+# .venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
 ```
 
-### Run Basic Example
+### 2. Run Example
 ```bash
-# Simple network
+# Using the provided script
+chmod +x run_example.sh
+./run_example.sh
+
+# Or directly
 python -m src.main \
     --products data/examples/products.csv \
     --nodes data/examples/nodes.csv \
@@ -32,114 +36,42 @@ python -m src.main \
     --output allocation_results.json
 ```
 
-### Run with Test Data
-```bash
-# Small test (10 products, simple network)
-python -m src.main \
-    --products data/dummy/products_small.csv \
-    --nodes data/dummy/nodes_simple.csv \
-    --edges data/dummy/node-node_simple.csv \
-    --output results/test_small.json
-
-# Large test (50 products, complex network)
-python -m src.main \
-    --products data/dummy/products_large.csv \
-    --nodes data/dummy/nodes_complex.csv \
-    --edges data/dummy/node-node_complex.csv \
-    --output results/test_large.json
-```
-
-## Available Test Data
-
-### Products Data
-- `products_small.csv` - 10 SKUs for quick testing
-- `products_medium.csv` - 25 SKUs for moderate testing  
-- `products_large.csv` - 50 SKUs across 10 categories (ELEC, HOME, TOYS, etc.)
-
-### Network Configurations
-- **Simple Network**: 1 port → 1 warehouse → 1 FC (5 nodes total)
-- **Complex Network**: 3 ports → 9 warehouses → 4 FCs (23 nodes total)
-
-### Supporting Data
-- `shipping_times.csv` - Transit times between clusters
-- `warehouse_rates.csv` - Storage costs by warehouse
-- `ocean_rates.csv` - Shipping rates by port pairs
-- `hazmat_rules.csv` - Hazardous material restrictions
-
-## Analysis Tools
-
-### Batch Testing
-```bash
-# Run multiple test scenarios
-python scripts/batch_test.py
-```
-
-### Results Analysis
-```bash
-# Analyze specific result
-python scripts/analyze_results.py results/test_large.json
-
-# Analyze all results in directory
-python scripts/analyze_results.py
-```
-
-### Network Visualization
-```bash
-# Visualize network structure
-python scripts/visualize_network.py
-```
-
-### Generate More Test Data
-```bash
-# Generate custom sized datasets
-python scripts/generate_test_data.py
-```
-
 ## Project Structure
 ```
+supply-chain-allocation/
 ├── src/
-│   ├── models/       # Pydantic data models
-│   ├── graph/        # Network graph engine
-│   ├── evaluators/   # Cost/feasibility/LT evaluators
-│   ├── allocation/   # Allocation algorithm
-│   └── main.py       # Entry point
-├── data/
-│   ├── examples/     # Basic example files
-│   └── dummy/        # Test datasets
-├── scripts/          # Utility scripts
-├── results/          # Output directory
-└── tests/            # Unit tests
+│   ├── models/         # Pydantic data models
+│   ├── graph/          # Network graph construction
+│   ├── evaluators/     # Cost/feasibility evaluators
+│   ├── allocation/     # Allocation algorithm
+│   └── utils/          # Utilities (CSV loading, memoization)
+├── data/examples/      # Example CSV files
+├── tests/              # Unit tests
+└── docs/               # Documentation
 ```
 
-## Key Concepts
+## Features
+- **Type-safe**: Pydantic models with validation
+- **Memoized**: Automatic caching of evaluator results
+- **Flexible**: JSON-configurable evaluators
+- **Optimized**: CM3-based allocation scoring
+- **Graph-based**: NetworkX for path finding
 
-### CM3 Score
-The allocation engine optimizes for CM3 (Contribution Margin) score:
-```
-CM3 Score = Contribution Margin / Total Cost
-```
+## Documentation
+- [Project Brain](docs/Project_Brain.md) - Technical overview
+- [Commits Guide](docs/Commits_Guide.md) - Development history
 
-### Path Evaluation
-Each path is evaluated for:
-1. **Total Cost**: Sum of all node and edge costs
-2. **Lead Time**: Sum of all transit times
-3. **Feasibility**: All segments must be feasible
+## Input Files
+The system requires three CSV files:
+1. **products.csv**: SKU data to allocate
+2. **nodes.csv**: Network nodes (suppliers, ports, warehouses, FCs)
+3. **node-node.csv**: Edges connecting nodes
 
-### Memoization
-Evaluator results are cached based on input parameters for performance.
+See `data/examples/` for format examples.
 
-## Development
-
-### Run Tests
-```bash
-pytest tests/
-```
-
-### Code Style
-```bash
-black src/
-mypy src/
-```
-
-## License
-MIT License - see LICENSE file for details.
+## Output
+JSON file with allocation results including:
+- Selected paths for each product
+- Total cost and lead time
+- CM3 optimization score
+- Feasibility status
