@@ -1,4 +1,4 @@
-# Commits Guide - v2.0
+# Commits Guide - v2.1
 
 ## Completed Commits
 
@@ -34,6 +34,12 @@
 - Example CSV data files
 - Basic unit tests
 - Setup scripts
+
+### Commit 7: Bug Fixes ✅
+- Fixed missing `validate_network_integrity` export in utils
+- Created missing `graph/__init__.py` file
+- Added `NetworkBuilder` class implementation
+- Fixed import issues preventing execution
 
 ## Next Steps
 - Add more sophisticated evaluator types
