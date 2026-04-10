@@ -7,23 +7,110 @@ __pycache__/
 env/
 venv/
 ENV/
-.env
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Data
-*.csv
-!data/examples/*.csv
+# Virtual Environments
+.venv
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Secrets & Environment
+.env
+.env.*
+!.env.example
+*.env
+creds.txt
+credentials*
+*secret*
+.aws/
+.azure/
+.gcp/
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
+.DS_Store
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
 
 # Testing
 .coverage
+.coverage.*
+.cache
 .pytest_cache/
 htmlcov/
+.tox/
+.hypothesis/
+coverage.xml
+
+# Data files (project-specific)
+data/dummy/*.csv
+!data/examples/*.csv
+
+# Results and outputs
+results/
+allocation_results.json
+*.json.bak
+test_results/
 
 # OS
 .DS_Store
 Thumbs.db
+.Thumbs.db
+*.swp
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Linting
+.flake8
+.pylintrc
+
+# Editor temporary files
+*.bak
+*.orig
+*.rej
+
+# Local development
+.local/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+tmp/
+temp/
